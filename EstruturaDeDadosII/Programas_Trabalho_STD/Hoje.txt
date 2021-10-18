@@ -1,0 +1,25 @@
+Basicamente, a STL e composta de conteineres, iteradores e
+algoritmos
+
+Conteineres sao templates de estruturas de dados
+	.Possuem m´etodos associados a eles
+
+
+Iteradores sao semelhantes a ponteiros, utilizados para
+percorrer e manipular os elementos de um conteiner
+Iteradores são usados ​​para apontar para os endereços de memória de contêineres STL . 
+
+Algoritmos sao as fun¸coes que realizam opera¸coes tais como
+buscar, ordenar e comparar elementos ou contˆeineres
+inteiros
+
+Os conteineres sao divididos em tres categorias principais:
+I Conteineres Sequenciais: estruturas de dados lineares.
+I Conteineres Associativos:
+I Estruturas de dados nao lineares
+I Pares chave/valor
+I Adaptadores de Conteineres: sao conteineres sequenciais,
+porem, em versoes restringidas.
+
+https://sites.google.com/aluno.unifenas.br/stl/introdu%C3%A7%C3%A3o?authuser=2
+	

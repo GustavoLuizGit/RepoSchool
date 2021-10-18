@@ -1,0 +1,5 @@
+ ( -Email: paulis@hot |-Telefone: 04145540 |-Nome: paulis  ) 
+ ( -Email: paulo@hot |-Telefone: 025658 |-Nome: paulo  ) 
+ ( -Email: junior@hot |-Telefone: 035984 |-Nome: junior  ) 
+ ( -Email: polinho@hotmail |-Telefone: 1056653 |-Nome: polio  ) 
+ ( -Email: lilinho@hot |-Telefone: 541514 |-Nome: lili  ) 
