@@ -26,8 +26,8 @@ namespace ProjetoAgenda
 
             SqlCommand cd = new SqlCommand();
             cd.Connection = cn;
-            cd.CommandText = "Insert into DadosAgenda (Nome, Telefone, Cidade) values ('" + txtNome.Text + " ', ' " + txtTelefone.Text + "','" + txtCidade.Text + "')";
-
+            //cd.CommandText = "Insert into DadosAgenda (Nome, Telefone, Cidade) values ('" + txtNome.Text + " ', ' " + txtTelefone.Text + "','" + txtCidade.Text + "')";
+            cd.CommandText = $"Insert into DadosAgenda (Nome, Telefone, Cidade) values ('{txtNome.Text}', '{txtTelefone.Text}', '{txtCidade.Text}')";
             cd.ExecuteNonQuery();
 
             MessageBox.Show("Registro incluido com sucesso");
