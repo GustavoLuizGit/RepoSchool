@@ -17,7 +17,10 @@ namespace ProjetoAgenda
         public FrmAlterar()
         {
             InitializeComponent();
+        }
+        private int codigoAgenda =0 ;
 
+        private void cmdAlterar_Click(object sender, EventArgs e)
         {
             SqlConnection cn = new SqlConnection();
             cn.ConnectionString = "SERVER = LAPTOP-PG3TNAT4\\SQLEXPRESS;Database=Agenda;UID=sa;PWD=123;";
