@@ -36,6 +36,10 @@ namespace ProjetoAgenda
             txtCidade.Clear();
            
         }
-       
+
+        private void FrmIncluir_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
