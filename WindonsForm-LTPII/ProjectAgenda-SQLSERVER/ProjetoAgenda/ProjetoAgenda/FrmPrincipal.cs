@@ -31,20 +31,20 @@ namespace ProjetoAgenda
 
         private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FrmExcluir fe = new FrmExcluir();
-            //fe.showdialog();
+            FrmExcluir fe = new FrmExcluir();
+            fe.ShowDialog();
         }
 
         private void porNomeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FrmPesquisaPorNome fpn = new PesquisaPorNome();
-            //fpn.showdialog();
+            FrmPesquisaPorNome fpn = new FrmPesquisaPorNome();
+            fpn.ShowDialog();
         }
 
         private void porCidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FrmPesquisaPorCidade fpc = new FrmPesquisaPorCidade();
-            //fpc.showdialog();
+            FrmPesquisaCidade fpc = new FrmPesquisaCidade();
+            fpc.ShowDialog();
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)

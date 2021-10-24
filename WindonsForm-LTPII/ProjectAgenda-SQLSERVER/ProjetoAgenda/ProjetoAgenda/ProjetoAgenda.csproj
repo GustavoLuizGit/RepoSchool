@@ -52,11 +52,29 @@
     <Compile Include="FrmAlterar.Designer.cs">
       <DependentUpon>FrmAlterar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmExcluir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExcluir.Designer.cs">
+      <DependentUpon>FrmExcluir.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmIncluir.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmIncluir.Designer.cs">
       <DependentUpon>FrmIncluir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPesquisaCidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPesquisaCidade.Designer.cs">
+      <DependentUpon>FrmPesquisaCidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPesquisaPorNome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPesquisaPorNome.Designer.cs">
+      <DependentUpon>FrmPesquisaPorNome.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -69,8 +87,17 @@
     <EmbeddedResource Include="FrmAlterar.resx">
       <DependentUpon>FrmAlterar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmExcluir.resx">
+      <DependentUpon>FrmExcluir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmIncluir.resx">
       <DependentUpon>FrmIncluir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPesquisaCidade.resx">
+      <DependentUpon>FrmPesquisaCidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPesquisaPorNome.resx">
+      <DependentUpon>FrmPesquisaPorNome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
