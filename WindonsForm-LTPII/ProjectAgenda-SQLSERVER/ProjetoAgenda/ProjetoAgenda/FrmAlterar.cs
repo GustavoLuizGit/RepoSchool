@@ -18,7 +18,8 @@ namespace ProjetoAgenda
         {
             InitializeComponent();
         }
-        private int codigoAgenda =0 ;
+
+        private int codigoAgenda;
 
         private void cmdAlterar_Click(object sender, EventArgs e)
         {
@@ -27,14 +28,16 @@ namespace ProjetoAgenda
             cn.Open();
 
             SqlCommand cd = new SqlCommand();
-            cd.Connection = cn;
 
             cd.CommandText = "Update DadosAgenda set Telefone = '" + txtTelefone.Text + "',Cidade = '" + txtCidade.Text + "'Where Codigo =" + codigoAgenda.ToString();
+            cd.Connection = cn;
+            cd.ExecuteNonQuery();
 
             MessageBox.Show("Registro alterado com sucesso!");
 
             txtCidade.Clear();
             txtTelefone.Clear();
+
 
         }
 
@@ -58,7 +61,7 @@ namespace ProjetoAgenda
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int codigoAgenda = int.Parse(comboBox1.SelectedValue.ToString());
+            codigoAgenda = int.Parse(comboBox1.SelectedValue.ToString());
             SqlConnection cn = new SqlConnection();
             cn.ConnectionString = "SERVER = LAPTOP-PG3TNAT4\\SQLEXPRESS;Database=Agenda;UID=sa;PWD=123;";
             SqlCommand cd = new SqlCommand();

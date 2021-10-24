@@ -103,7 +103,7 @@ namespace ProjetoAgenda
             // 
             // cmdAlterar
             // 
-            this.cmdAlterar.Location = new System.Drawing.Point(45, 331);
+            this.cmdAlterar.Location = new System.Drawing.Point(45, 335);
             this.cmdAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.cmdAlterar.Name = "cmdAlterar";
             this.cmdAlterar.Size = new System.Drawing.Size(385, 58);
