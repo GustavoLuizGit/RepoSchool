@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ProjetoBrasileirao
 {
@@ -32,7 +33,21 @@ namespace ProjetoBrasileirao
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SqlConnection cn = new SqlConnection();
+            cn.ConnectionString = "SERVER = LAPTOP-PG3TNAT4\\SQLEXPRESS;Database=Brasileirao;UID=sa;PWD=123;";
+            cn.Open();
 
+            SqlCommand cd = new SqlCommand();
+            cd.Connection = cn;
+            cd.CommandText = $"Insert into Times (nome, foto, quantidadeTitulos, fundacao) values ('{txtNome.Text}', '{pictureBox2.Image}', '{txtTitulos.Text}', '{txtFundacao.Text}')";
+
+            cd.ExecuteNonQuery();
+
+            MessageBox.Show("Time registrado com sucesso");
+            txtNome.Clear();
+            txtFundacao.Clear();
+            txtTitulos.Clear();
+            pictureBox2.Image = ProjetoBrasileirao.Properties.Resources.x;
         }
     }
 }
