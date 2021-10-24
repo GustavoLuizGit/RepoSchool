@@ -21,13 +21,13 @@ namespace ProjetoAgenda
         private void cmdIncluir_Click(object sender, EventArgs e)
         { 
             SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = "SERVER = LAPTOP-PG3TNAT4\\SQLEXPRESS;Database=Brasileirao;UID=sa;PWD=123;";
+            cn.ConnectionString = "SERVER = LAPTOP-PG3TNAT4\\SQLEXPRESS;Database=Agenda;UID=sa;PWD=123;";
             cn.Open();
 
             SqlCommand cd = new SqlCommand();
+            cd.Connection = cn;
             //cd.CommandText = "Insert into DadosAgenda (Nome, Telefone, Cidade) values ('" + txtNome.Text + " ', ' " + txtTelefone.Text + "','" + txtCidade.Text + "')";
             cd.CommandText = $"Insert into DadosAgenda (Nome, Telefone, Cidade) values ('{txtNome.Text}', '{txtTelefone.Text}', '{txtCidade.Text}')";
-            cd.Connection = cn;
             cd.ExecuteNonQuery();
 
             MessageBox.Show("Registro incluido com sucesso");
@@ -37,9 +37,5 @@ namespace ProjetoAgenda
            
         }
 
-        private void FrmIncluir_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
