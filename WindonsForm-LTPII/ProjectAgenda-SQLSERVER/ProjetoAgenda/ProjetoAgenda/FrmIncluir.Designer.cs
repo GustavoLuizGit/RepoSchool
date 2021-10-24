@@ -129,6 +129,7 @@ namespace ProjetoAgenda
             this.Controls.Add(this.label1);
             this.Name = "FrmIncluir";
             this.Text = "FrmIncluir";
+            this.Load += new System.EventHandler(this.FrmIncluir_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
