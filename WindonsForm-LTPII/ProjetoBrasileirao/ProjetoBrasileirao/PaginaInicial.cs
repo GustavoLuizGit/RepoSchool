@@ -27,12 +27,14 @@ namespace ProjetoBrasileirao
         {
             panel2.Visible = true;
             panel1.Visible = false;
+            cmdPesquisar.Visible = false;
         }
 
         private void cmdPesquisaNome_Click(object sender, EventArgs e)
         {
             panel2.Visible = false;
             panel1.Visible = true;
+            cmdPesquisar.Visible = true;
             PesquisaPorNome pn = new PesquisaPorNome();
             pn.ShowDialog();
         }
@@ -41,6 +43,7 @@ namespace ProjetoBrasileirao
         {
             panel2.Visible = false;
             panel1.Visible = true;
+            cmdPesquisar.Enabled = true;
             PesquisaData pd = new PesquisaData();
             pd.ShowDialog();
         }
@@ -49,6 +52,12 @@ namespace ProjetoBrasileirao
         {
             Adicionar ad = new Adicionar();
             ad.ShowDialog();
+        }
+
+        private void cmdExcluir_Click(object sender, EventArgs e)
+        {
+            Excluir ex = new Excluir();
+            ex.ShowDialog();
         }
     }
 }
