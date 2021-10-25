@@ -29,10 +29,7 @@ namespace ProjetoBrasileirao
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtFundacao = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,21 +37,13 @@ namespace ProjetoBrasileirao
             this.label1 = new System.Windows.Forms.Label();
             this.cmdAlterar = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.cmdimg = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmdFechar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtEpico = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ProjetoBrasileirao.Properties.Resources.a;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(850, 529);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // txtFundacao
             // 
@@ -65,28 +54,6 @@ namespace ProjetoBrasileirao
             this.txtFundacao.Name = "txtFundacao";
             this.txtFundacao.Size = new System.Drawing.Size(204, 34);
             this.txtFundacao.TabIndex = 17;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::ProjetoBrasileirao.Properties.Resources.x;
-            this.pictureBox2.Location = new System.Drawing.Point(456, 291);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(204, 127);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 16;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(137, 291);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(266, 37);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Imagem do time :";
             // 
             // label4
             // 
@@ -149,8 +116,9 @@ namespace ProjetoBrasileirao
             // cmdAlterar
             // 
             this.cmdAlterar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cmdAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdAlterar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cmdAlterar.Location = new System.Drawing.Point(323, 451);
+            this.cmdAlterar.Location = new System.Drawing.Point(335, 362);
             this.cmdAlterar.Name = "cmdAlterar";
             this.cmdAlterar.Size = new System.Drawing.Size(208, 62);
             this.cmdAlterar.TabIndex = 21;
@@ -168,44 +136,78 @@ namespace ProjetoBrasileirao
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(204, 37);
             this.comboBox1.TabIndex = 22;
-            // 
-            // cmdimg
-            // 
-            this.cmdimg.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cmdimg.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cmdimg.Location = new System.Drawing.Point(498, 330);
-            this.cmdimg.Name = "cmdimg";
-            this.cmdimg.Size = new System.Drawing.Size(118, 51);
-            this.cmdimg.TabIndex = 23;
-            this.cmdimg.Text = "Imagem";
-            this.cmdimg.UseVisualStyleBackColor = false;
-            this.cmdimg.Click += new System.EventHandler(this.cmdimg_Click);
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProjetoBrasileirao.Properties.Resources.a;
+            this.pictureBox1.Location = new System.Drawing.Point(-2, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(850, 529);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cmdFechar
+            // 
+            this.cmdFechar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cmdFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdFechar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cmdFechar.Location = new System.Drawing.Point(366, 451);
+            this.cmdFechar.Name = "cmdFechar";
+            this.cmdFechar.Size = new System.Drawing.Size(154, 62);
+            this.cmdFechar.TabIndex = 23;
+            this.cmdFechar.Text = "Fechar";
+            this.cmdFechar.UseVisualStyleBackColor = false;
+            this.cmdFechar.Click += new System.EventHandler(this.cmdFechar_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Black;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(158, 292);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(245, 37);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Titulo historico :";
+            // 
+            // txtEpico
+            // 
+            this.txtEpico.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.txtEpico.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEpico.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtEpico.Location = new System.Drawing.Point(456, 295);
+            this.txtEpico.Name = "txtEpico";
+            this.txtEpico.Size = new System.Drawing.Size(204, 34);
+            this.txtEpico.TabIndex = 25;
             // 
             // Alterar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 525);
-            this.Controls.Add(this.cmdimg);
+            this.Controls.Add(this.txtEpico);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cmdFechar);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.cmdAlterar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTitulos);
             this.Controls.Add(this.txtFundacao);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Alterar";
             this.Text = "Alterar";
+            this.Load += new System.EventHandler(this.Alterar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,8 +217,6 @@ namespace ProjetoBrasileirao
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtFundacao;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -224,7 +224,9 @@ namespace ProjetoBrasileirao
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button cmdAlterar;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button cmdimg;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button cmdFechar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtEpico;
     }
 }
