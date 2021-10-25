@@ -25,32 +25,12 @@ namespace ProjetoAgenda
             cn.Open();
 
             string sql = $"Select * from DadosAgenda where Nome LIKE '{txtNome.Text}%' ";
-            SqlDataAdapter da = new SqlDataAdapter(sql,cn);
+            SqlDataAdapter da = new SqlDataAdapter(sql, cn);
 
             DataSet ds = new DataSet();
             da.Fill(ds);
 
             dgvMostra.DataSource = ds.Tables[0];
-        }
-
-        private void dgvMostra_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -46,7 +46,6 @@ namespace ProjetoAgenda
             this.label4.Size = new System.Drawing.Size(248, 29);
             this.label4.TabIndex = 10;
             this.label4.Text = "Pesquisa pelo Nome";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtNome
             // 
@@ -55,7 +54,6 @@ namespace ProjetoAgenda
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(286, 30);
             this.txtNome.TabIndex = 9;
-            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // label1
             // 
@@ -66,7 +64,6 @@ namespace ProjetoAgenda
             this.label1.Size = new System.Drawing.Size(72, 24);
             this.label1.TabIndex = 8;
             this.label1.Text = "Nome :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // cmdPesquisar
             // 
@@ -87,7 +84,6 @@ namespace ProjetoAgenda
             this.dgvMostra.RowTemplate.Height = 24;
             this.dgvMostra.Size = new System.Drawing.Size(430, 191);
             this.dgvMostra.TabIndex = 12;
-            this.dgvMostra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostra_CellContentClick);
             // 
             // FrmPesquisaPorNome
             // 
