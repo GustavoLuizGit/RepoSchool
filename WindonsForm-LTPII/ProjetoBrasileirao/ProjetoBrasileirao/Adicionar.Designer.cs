@@ -33,16 +33,15 @@ namespace ProjetoBrasileirao
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmdInserirImagem = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button1 = new System.Windows.Forms.Button();
             this.txtTitulos = new System.Windows.Forms.TextBox();
             this.txtFundacao = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.cmdFechar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtTituloHistorico = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +63,7 @@ namespace ProjetoBrasileirao
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(119, 117);
+            this.label2.Location = new System.Drawing.Point(119, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(244, 37);
             this.label2.TabIndex = 2;
@@ -76,7 +75,7 @@ namespace ProjetoBrasileirao
             this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(83, 171);
+            this.label3.Location = new System.Drawing.Point(83, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(280, 37);
             this.label3.TabIndex = 3;
@@ -88,36 +87,11 @@ namespace ProjetoBrasileirao
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(24, 225);
+            this.label4.Location = new System.Drawing.Point(24, 281);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(339, 37);
             this.label4.TabIndex = 4;
             this.label4.Text = "Quantidade de titulos :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(97, 280);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(266, 37);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Imagem do time :";
-            // 
-            // cmdInserirImagem
-            // 
-            this.cmdInserirImagem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cmdInserirImagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdInserirImagem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cmdInserirImagem.Location = new System.Drawing.Point(449, 324);
-            this.cmdInserirImagem.Name = "cmdInserirImagem";
-            this.cmdInserirImagem.Size = new System.Drawing.Size(126, 42);
-            this.cmdInserirImagem.TabIndex = 7;
-            this.cmdInserirImagem.Text = "Imagem";
-            this.cmdInserirImagem.UseVisualStyleBackColor = false;
-            this.cmdInserirImagem.Click += new System.EventHandler(this.cmdInserirImagem_Click);
             // 
             // openFileDialog1
             // 
@@ -128,7 +102,7 @@ namespace ProjetoBrasileirao
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(314, 486);
+            this.button1.Location = new System.Drawing.Point(316, 442);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(314, 79);
             this.button1.TabIndex = 8;
@@ -141,7 +115,7 @@ namespace ProjetoBrasileirao
             this.txtTitulos.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtTitulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitulos.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtTitulos.Location = new System.Drawing.Point(416, 225);
+            this.txtTitulos.Location = new System.Drawing.Point(415, 284);
             this.txtTitulos.Name = "txtTitulos";
             this.txtTitulos.Size = new System.Drawing.Size(204, 34);
             this.txtTitulos.TabIndex = 9;
@@ -151,7 +125,7 @@ namespace ProjetoBrasileirao
             this.txtFundacao.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtFundacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFundacao.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtFundacao.Location = new System.Drawing.Point(416, 174);
+            this.txtFundacao.Location = new System.Drawing.Point(415, 212);
             this.txtFundacao.Name = "txtFundacao";
             this.txtFundacao.Size = new System.Drawing.Size(204, 34);
             this.txtFundacao.TabIndex = 10;
@@ -161,24 +135,14 @@ namespace ProjetoBrasileirao
             this.txtNome.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtNome.Location = new System.Drawing.Point(415, 120);
+            this.txtNome.Location = new System.Drawing.Point(415, 152);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(204, 34);
             this.txtNome.TabIndex = 11;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::ProjetoBrasileirao.Properties.Resources.x;
-            this.pictureBox2.Location = new System.Drawing.Point(416, 280);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(204, 127);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::ProjetoBrasileirao.Properties.Resources._20190423182944_861;
+            this.pictureBox1.Image = global::ProjetoBrasileirao.Properties.Resources.xa;
             this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(907, 654);
@@ -186,18 +150,53 @@ namespace ProjetoBrasileirao
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // cmdFechar
+            // 
+            this.cmdFechar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cmdFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdFechar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cmdFechar.Location = new System.Drawing.Point(358, 550);
+            this.cmdFechar.Name = "cmdFechar";
+            this.cmdFechar.Size = new System.Drawing.Size(241, 79);
+            this.cmdFechar.TabIndex = 12;
+            this.cmdFechar.Text = "Fechar";
+            this.cmdFechar.UseVisualStyleBackColor = false;
+            this.cmdFechar.Click += new System.EventHandler(this.cmdFechar_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(113, 346);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(250, 37);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Titulo Historico :";
+            // 
+            // txtTituloHistorico
+            // 
+            this.txtTituloHistorico.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.txtTituloHistorico.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTituloHistorico.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtTituloHistorico.Location = new System.Drawing.Point(415, 346);
+            this.txtTituloHistorico.Name = "txtTituloHistorico";
+            this.txtTituloHistorico.Size = new System.Drawing.Size(204, 34);
+            this.txtTituloHistorico.TabIndex = 14;
+            // 
             // Adicionar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 653);
+            this.Controls.Add(this.txtTituloHistorico);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cmdFechar);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtFundacao);
             this.Controls.Add(this.txtTitulos);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.cmdInserirImagem);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -205,7 +204,6 @@ namespace ProjetoBrasileirao
             this.Controls.Add(this.pictureBox1);
             this.Name = "Adicionar";
             this.Text = "Adicionar";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -219,13 +217,13 @@ namespace ProjetoBrasileirao
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button cmdInserirImagem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtTitulos;
         private System.Windows.Forms.TextBox txtFundacao;
         private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Button cmdFechar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtTituloHistorico;
     }
 }

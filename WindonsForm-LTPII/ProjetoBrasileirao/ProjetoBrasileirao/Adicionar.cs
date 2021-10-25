@@ -17,19 +17,6 @@ namespace ProjetoBrasileirao
         {
             InitializeComponent();
         }
-        private Bitmap img1;
-        private void cmdInserirImagem_Click(object sender, EventArgs e)
-        {
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                img1 = new Bitmap(openFileDialog1.FileName);
-                pictureBox2.Image = img1;
-            }
-            if(pictureBox2.Image!= ProjetoBrasileirao.Properties.Resources.x)
-            {
-                cmdInserirImagem.Visible = false;
-            }
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -39,7 +26,7 @@ namespace ProjetoBrasileirao
 
             SqlCommand cd = new SqlCommand();
             cd.Connection = cn;
-            cd.CommandText = $"Insert into Times (nome, foto, quantidadeTitulos, fundacao) values ('{txtNome.Text}', '{pictureBox2.Image}', '{txtTitulos.Text}', '{txtFundacao.Text}')";
+            cd.CommandText = $"Insert into Times (nome, quantidadeTitulos, fundacao, tituloEpico) values ('{txtNome.Text}', '{txtTitulos.Text}', '{txtFundacao.Text}' , '{txtTituloHistorico.Text}')";
 
             cd.ExecuteNonQuery();
 
@@ -47,7 +34,12 @@ namespace ProjetoBrasileirao
             txtNome.Clear();
             txtFundacao.Clear();
             txtTitulos.Clear();
-            pictureBox2.Image = ProjetoBrasileirao.Properties.Resources.x;
+            txtTituloHistorico.Clear();
+        }
+
+        private void cmdFechar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
