@@ -58,6 +58,12 @@
     <Compile Include="Alterar.Designer.cs">
       <DependentUpon>Alterar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Excluir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Excluir.Designer.cs">
+      <DependentUpon>Excluir.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaginaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Alterar.resx">
       <DependentUpon>Alterar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Excluir.resx">
+      <DependentUpon>Excluir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial.resx">
       <DependentUpon>PaginaInicial.cs</DependentUpon>
@@ -130,6 +139,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\as.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mh_interna_istock-992892836.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
