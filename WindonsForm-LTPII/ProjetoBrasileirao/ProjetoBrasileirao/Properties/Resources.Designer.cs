@@ -103,9 +103,29 @@ namespace ProjetoBrasileirao.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mh_interna_istock_992892836 {
+            get {
+                object obj = ResourceManager.GetObject("mh_interna_istock-992892836", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap x {
             get {
                 object obj = ResourceManager.GetObject("x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xa {
+            get {
+                object obj = ResourceManager.GetObject("xa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
