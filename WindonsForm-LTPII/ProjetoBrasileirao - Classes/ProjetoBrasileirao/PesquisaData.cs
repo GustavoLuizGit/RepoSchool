@@ -20,7 +20,7 @@ namespace ProjetoBrasileirao
         private BrasileiraoClass dados = new BrasileiraoClass();
         private void cmdPesquisa_Click(object sender, EventArgs e)
         {
-            dados.Fundacao = dateTimePicker1.Text;
+            dados.Fundacao = dateTimePicker1.Value.ToString("dd-MM");
             dados.ListarDadosPorFundacao();
             dataGridView1.DataSource = dados.ListarDadosPorFundacao().Tables[0];
         }
@@ -28,11 +28,6 @@ namespace ProjetoBrasileirao
         private void cmdFechar_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
