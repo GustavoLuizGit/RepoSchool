@@ -43,7 +43,7 @@ namespace ProjetoBrasileirao
             // cmdPesquisa
             // 
             this.cmdPesquisa.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdPesquisa.Location = new System.Drawing.Point(306, 141);
+            this.cmdPesquisa.Location = new System.Drawing.Point(318, 145);
             this.cmdPesquisa.Name = "cmdPesquisa";
             this.cmdPesquisa.Size = new System.Drawing.Size(196, 52);
             this.cmdPesquisa.TabIndex = 11;
@@ -66,7 +66,7 @@ namespace ProjetoBrasileirao
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(172, 92);
+            this.label2.Location = new System.Drawing.Point(185, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(261, 32);
             this.label2.TabIndex = 8;
@@ -96,7 +96,7 @@ namespace ProjetoBrasileirao
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(464, 90);
+            this.dateTimePicker1.Location = new System.Drawing.Point(453, 90);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(185, 34);
             this.dateTimePicker1.TabIndex = 12;
@@ -104,7 +104,7 @@ namespace ProjetoBrasileirao
             // cmdFechar
             // 
             this.cmdFechar.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdFechar.Location = new System.Drawing.Point(331, 218);
+            this.cmdFechar.Location = new System.Drawing.Point(349, 203);
             this.cmdFechar.Name = "cmdFechar";
             this.cmdFechar.Size = new System.Drawing.Size(145, 31);
             this.cmdFechar.TabIndex = 13;
