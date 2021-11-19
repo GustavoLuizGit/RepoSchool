@@ -29,7 +29,8 @@ namespace ProjetoAgenda
 
             SqlCommand cd = new SqlCommand();
 
-            cd.CommandText = "Update DadosAgenda set Telefone = '" + txtTelefone.Text + "',Cidade = '" + txtCidade.Text + "'Where Codigo =" + codigoAgenda.ToString();
+            //cd.CommandText = "Update DadosAgenda set Telefone = '" + txtTelefone.Text + "',Cidade = '" + txtCidade.Text + "'Where Codigo =" + codigoAgenda.ToString();
+            cd.CommandText = $"Delete DadosAgenda set Telefone = {txtTelefone}, Cidade = {txtCidade} where Codigo = {codigoAgenda.ToString()}";
             cd.Connection = cn;
             cd.ExecuteNonQuery();
 

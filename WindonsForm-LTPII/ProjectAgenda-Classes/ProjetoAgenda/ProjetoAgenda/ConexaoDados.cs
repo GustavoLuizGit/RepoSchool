@@ -26,11 +26,17 @@ namespace ProjetoAgenda
             cn.Close();
         }
 
-        public void Executar(string sql)
+        public void Executar(string sql, byte[]foto)
         {
             Conectar();
             cd.Connection = cn;
             cd.CommandText = sql;
+            if (foto != null)
+            {
+                cd.Parameters.Clear();
+                cd.Parameters.Add("@BINARIO", SqlDbType.Image);
+                cd.Parameters["@BINARIO"].Value = foto;
+            }
             cd.ExecuteNonQuery();
             Desconectar();
         }
@@ -38,11 +44,12 @@ namespace ProjetoAgenda
         public void Listar(string sql)
         {
             Conectar();
-            da = new SqlDataAdapter(sql,cn);
+            da = new SqlDataAdapter(sql, cn);
             ds = new DataSet();
             da.Fill(ds);
             Desconectar();
         }
+
 
         public void Consultar(string sql)
         {

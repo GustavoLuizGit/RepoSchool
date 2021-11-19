@@ -13,29 +13,31 @@ namespace ProjetoAgenda
         private string nome;
         private string telefone;
         private string cidade;
+        private byte[] foto;
 
         public int Codigo { get => codigo; set => codigo = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Telefone { get => telefone; set => telefone = value; }
         public string Cidade { get => cidade; set => cidade = value; }
+        public byte[] Foto { get => foto; set => foto = value; }
 
         private ConexaoDados objetoConexao = new ConexaoDados();
         public void Inserir()
         {
-            string sql = $"Insert into DadosAgenda (Nome, Telefone, Cidade) values ('{Nome}', '{Telefone}', '{Cidade}')";
-            objetoConexao.Executar(sql);
+            string sql = $"Insert into DadosAgenda (Nome, Telefone, Cidade, foto) values ('{Nome}', '{Telefone}', '{Cidade}' , @BINARIO)";
+            objetoConexao.Executar(sql,foto);
         }
 
         public void Alterar()
         {
-            string sql = "Update DadosAgenda set Telefone = '" + Telefone+ "',Cidade = '" + Cidade+ "'Where Codigo =" + Codigo.ToString();
-            objetoConexao.Executar(sql);
+            string sql = $"Update DadosAgenda set Telefone = '{Telefone}',Cidade = '{Cidade}', Foto = @Binario Where Codigo =" + Codigo.ToString();
+            objetoConexao.Executar(sql, foto);
         }
 
         public void Excluir()
         {
             string sql = $"Delete DadosAgenda where codigo = {Codigo.ToString()}";
-            objetoConexao.Executar(sql);
+            objetoConexao.Executar(sql, foto);
         }
 
         public void ConsultarDados()
@@ -47,6 +49,7 @@ namespace ProjetoAgenda
             {
                 Telefone = objetoConexao.dr["Telefone"].ToString();
                 Cidade = objetoConexao.dr["Cidade"].ToString();
+                Foto = (byte[])objetoConexao.dr["foto"];
             }
             objetoConexao.Desconectar();
         }

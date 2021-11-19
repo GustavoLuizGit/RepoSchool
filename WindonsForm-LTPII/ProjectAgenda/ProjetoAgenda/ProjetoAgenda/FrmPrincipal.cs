@@ -46,8 +46,7 @@ namespace ProjetoAgenda
             FrmPesquisaCidade fpc = new FrmPesquisaCidade();
             fpc.ShowDialog();
         }
-
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        private void sairToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Close();
         }

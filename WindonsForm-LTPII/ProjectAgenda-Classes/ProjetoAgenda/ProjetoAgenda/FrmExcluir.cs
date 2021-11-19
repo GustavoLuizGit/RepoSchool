@@ -21,7 +21,6 @@ namespace ProjetoAgenda
         private DadosAgenda dados = new DadosAgenda();
         private void carregarAgenda()
         {
-            comboBox1.DisplayMember = "Nome";
             comboBox1.ValueMember = "Codigo";
             comboBox1.DataSource = dados.ListarDados().Tables[0];
         }

@@ -37,7 +37,8 @@ namespace ProjetoAgenda
             this.pesquisaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porNomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porCidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRelatorio = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,8 @@ namespace ProjetoAgenda
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.pesquisaToolStripMenuItem,
-            this.sairToolStripMenuItem});
+            this.mnuRelatorio,
+            this.mnuSair});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -67,21 +69,21 @@ namespace ProjetoAgenda
             // incluirToolStripMenuItem
             // 
             this.incluirToolStripMenuItem.Name = "incluirToolStripMenuItem";
-            this.incluirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.incluirToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
             this.incluirToolStripMenuItem.Text = "Incluir";
             this.incluirToolStripMenuItem.Click += new System.EventHandler(this.incluirToolStripMenuItem_Click);
             // 
             // alterarToolStripMenuItem
             // 
             this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
-            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
             this.alterarToolStripMenuItem.Text = "Alterar";
             this.alterarToolStripMenuItem.Click += new System.EventHandler(this.alterarToolStripMenuItem_Click);
             // 
             // excluirToolStripMenuItem
             // 
             this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
-            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
             this.excluirToolStripMenuItem.Text = "Excluir";
             this.excluirToolStripMenuItem.Click += new System.EventHandler(this.excluirToolStripMenuItem_Click);
             // 
@@ -97,23 +99,29 @@ namespace ProjetoAgenda
             // porNomeToolStripMenuItem
             // 
             this.porNomeToolStripMenuItem.Name = "porNomeToolStripMenuItem";
-            this.porNomeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.porNomeToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.porNomeToolStripMenuItem.Text = "Por nome";
             this.porNomeToolStripMenuItem.Click += new System.EventHandler(this.porNomeToolStripMenuItem_Click);
             // 
             // porCidadeToolStripMenuItem
             // 
             this.porCidadeToolStripMenuItem.Name = "porCidadeToolStripMenuItem";
-            this.porCidadeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.porCidadeToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
             this.porCidadeToolStripMenuItem.Text = "Por cidade";
             this.porCidadeToolStripMenuItem.Click += new System.EventHandler(this.porCidadeToolStripMenuItem_Click);
             // 
-            // sairToolStripMenuItem
+            // mnuRelatorio
             // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            this.mnuRelatorio.Name = "mnuRelatorio";
+            this.mnuRelatorio.Size = new System.Drawing.Size(84, 24);
+            this.mnuRelatorio.Text = "Relatorio";
+            this.mnuRelatorio.Click += new System.EventHandler(this.mnuRelatorio_Click);
+            // 
+            // mnuSair
+            // 
+            this.mnuSair.Name = "mnuSair";
+            this.mnuSair.Size = new System.Drawing.Size(48, 24);
+            this.mnuSair.Text = "Sair";
             // 
             // FrmPrincipal
             // 
@@ -141,7 +149,8 @@ namespace ProjetoAgenda
         private System.Windows.Forms.ToolStripMenuItem pesquisaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem porNomeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem porCidadeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuRelatorio;
+        private System.Windows.Forms.ToolStripMenuItem mnuSair;
     }
 }
 

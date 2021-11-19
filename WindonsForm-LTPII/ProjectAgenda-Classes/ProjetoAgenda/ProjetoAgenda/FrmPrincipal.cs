@@ -47,9 +47,10 @@ namespace ProjetoAgenda
             fpc.ShowDialog();
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnuRelatorio_Click(object sender, EventArgs e)
         {
-            Close();
+            frmRelatorio fr = new frmRelatorio();
+            fr.ShowDialog();
         }
     }
 }

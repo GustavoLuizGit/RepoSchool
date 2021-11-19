@@ -37,6 +37,10 @@ namespace ProjetoAgenda
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cmdAlterar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmdImg = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -103,7 +107,7 @@ namespace ProjetoAgenda
             // 
             // cmdAlterar
             // 
-            this.cmdAlterar.Location = new System.Drawing.Point(45, 335);
+            this.cmdAlterar.Location = new System.Drawing.Point(34, 577);
             this.cmdAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.cmdAlterar.Name = "cmdAlterar";
             this.cmdAlterar.Size = new System.Drawing.Size(385, 58);
@@ -122,11 +126,36 @@ namespace ProjetoAgenda
             this.label4.TabIndex = 8;
             this.label4.Text = "Alterando Dados ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(122, 394);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(240, 159);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cmdImg
+            // 
+            this.cmdImg.Location = new System.Drawing.Point(180, 337);
+            this.cmdImg.Name = "cmdImg";
+            this.cmdImg.Size = new System.Drawing.Size(128, 51);
+            this.cmdImg.TabIndex = 10;
+            this.cmdImg.Text = "Carregar";
+            this.cmdImg.UseVisualStyleBackColor = true;
+            this.cmdImg.Click += new System.EventHandler(this.cmdImg_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // FrmAlterar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 460);
+            this.ClientSize = new System.Drawing.Size(483, 648);
+            this.Controls.Add(this.cmdImg);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmdAlterar);
             this.Controls.Add(this.comboBox1);
@@ -140,6 +169,7 @@ namespace ProjetoAgenda
             this.Name = "FrmAlterar";
             this.Text = "FrmAlterar";
             this.Load += new System.EventHandler(this.FrmAlterar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,5 +185,8 @@ namespace ProjetoAgenda
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button cmdAlterar;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button cmdImg;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
