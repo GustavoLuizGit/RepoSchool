@@ -17,7 +17,7 @@ namespace ProjetoAgenda
         public DataSet ds;
         public void Conectar()
         {
-            cn.ConnectionString = "SERVER = LAPTOP-PG3TNAT4\\SQLEXPRESS;Database=Agenda;UID=sa;PWD=123;";
+            cn.ConnectionString = "SERVER = LAPTOP-PG3TNAT4\\SQLEXPRESS;Database=Agenda-Banco;UID=sa;PWD=123;";
             cn.Open();
         }
 

@@ -63,7 +63,7 @@ namespace ProjetoAgenda
             ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
 
             linha = "Telefone";
-            ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 500, posicaoVertical);
+            ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 200, posicaoVertical);
 
             contador += 1;
             linha = "-------------------------------------------------------------------------------------------------";
@@ -85,7 +85,7 @@ namespace ProjetoAgenda
 
                     linha = item["Telefone"].ToString();
                     posicaoVertical = margemSuperior + contador * alturaFonte;
-                    ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 500, posicaoVertical);
+                    ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 200, posicaoVertical);
 
 
                     contador += 2;
