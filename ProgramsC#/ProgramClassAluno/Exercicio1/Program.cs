@@ -13,7 +13,7 @@ namespace Exercicio1
         }
         public void GravaAluno()
         {
-            Console.Write("Qual o nome do aluno : ");
+            Console.Write("Qual o nome do aluno :: ");
             nome = Console.ReadLine();
             Console.Write("Qual  matricula do aluno : ");
             matricula = Console.ReadLine();
