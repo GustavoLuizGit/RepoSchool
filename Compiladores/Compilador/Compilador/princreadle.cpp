@@ -26,6 +26,9 @@ void expression();
 void term();
 void add();
 void subtract();
+void factor();
+void multiply();
+void divide();
 
 /* PROGRAMA PRINCIPAL */
 int main()
@@ -40,8 +43,8 @@ void expression()
 	term();
 
 	while (look == '+' || look == '-') {
-		emit("MOV BX,AX");
-		
+		emit("PUSH AX");
+	
 		switch (look) {
 		case '+':
 			add();
@@ -55,23 +58,67 @@ void expression()
 	}
 }
 
+void term()
+{
+	factor();
+	while (look == '*' || look == '/') {
+		emit("PUSH AX");
+	
+		switch (look) {
+		case '*':
+			multiply();
+			break;
+		case '/':
+			divide();
+			break;
+		default:
+			expected("AddOP");
+		}
+	}
+}
+
+void factor()
+{
+	/*if (look == '(') {
+		match('(');
+		expression();
+		match(')');
+	}
+	else
+		emit("MOV AX, %c", getNum());*/
+	emit("MOV AX,%c", getNum());
+}
+
+void multiply() {
+	match('*');
+	factor();
+	emit("POP BX");
+	emit("IMUL BX");
+}
+
+void divide() {
+	match('/');
+	factor();
+	emit("POP BX");
+	emit("CWD");
+	emit("XCHG AX, BX");
+	emit("IDIV BX");
+}
+
 void add()
 {
 	match('+');
 	term();
+	emit("POP BX");
 	emit("ADD AX,BX");
 }
 void subtract()
 {
 	match('-');
 	term();
+	emit("POP BX");
 	emit("SUB AX,BX");
 	emit("NEG AX");
-}
-
-void term()
-{
-	emit("MOV AX,%c", getNum());
 }
 
 /* inicialização do compilador */
