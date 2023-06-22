@@ -9,6 +9,8 @@ Este código é de livre distribuição e uso.
 #include <stdlib.h>
 #include <stdarg.h>
 #include <ctype.h>
+#define MAXNAME 30
+#define MAXNUM 5
 
 char look; /* O caracter lido "antecipadamente" (lookahead) */
 
@@ -19,8 +21,8 @@ void error(const char* fmt, ...);
 void fatal(const char* fmt, ...);
 void expected(const char* fmt, ...);
 void match(char c);
-char getName();
-char getNum();
+void getName(char*);
+void getNum(char*);
 void emit(const char* fmt, ...);
 void expression();
 void term();
@@ -29,22 +31,28 @@ void subtract();
 void factor();
 void multiply();
 void divide();
+void ident();
+void assignment();
+int isAddOp(char);
 
 /* PROGRAMA PRINCIPAL */
 int main()
 {
 	init();
-	expression();
+	assignment();
+	if (look !='\n')
+		expected("NewLine");
 	return 0;
 }
 
 void expression()
 {
-	term();
-
-	while (look == '+' || look == '-') {
+	if (isAddOp(look))
+		emit("XOR AX, AX");
+	else
+		term();
+	while (isAddOp(look)) {
 		emit("PUSH AX");
-	
 		switch (look) {
 		case '+':
 			add();
@@ -53,9 +61,15 @@ void expression()
 			subtract();
 			break;
 		default:
-			expected("AddOP");
+			expected("AddOp");
+			break;
 		}
 	}
+}
+
+int isAddOp(char c)
+{
+	return (c == '+' || c == '-');
 }
 
 void term()
@@ -63,7 +77,6 @@ void term()
 	factor();
 	while (look == '*' || look == '/') {
 		emit("PUSH AX");
-	
 		switch (look) {
 		case '*':
 			multiply();
@@ -72,21 +85,49 @@ void term()
 			divide();
 			break;
 		default:
-			expected("AddOP");
+			expected("MulOp");
+			break;
 		}
 	}
 }
 
 void factor()
 {
-	/*if (look == '(') {
+	char num[MAXNUM + 1];
+	if (look == '(') {
 		match('(');
 		expression();
 		match(')');
 	}
+	else if (isalpha(look)) {
+		ident();
+	}
+	else {
+		getNum(num);
+		emit("MOV AX, %s", num);
+	}
+}
+
+void assignment()
+{
+	char name[MAXNAME + 1];
+	getName(name);
+	match('=');
+	expression();
+	emit("MOV [%s], AX", name);
+}
+
+void ident()
+{
+	char name[MAXNAME + 1];
+	getName(name);
+	if (look == '(') {
+		match('(');
+		match(')');
+		emit("CALL %s", name);
+	}
 	else
-		emit("MOV AX, %c", getNum());*/
-	emit("MOV AX,%c", getNum());
+		emit("MOV AX, [%s]", name);
 }
 
 void multiply() {
@@ -117,7 +158,7 @@ void subtract()
 	match('-');
 	term();
 	emit("POP BX");
-	emit("SUB AX,BX");
+	emit("SUB AX, BX");
 	emit("NEG AX");
 }
 
@@ -171,24 +212,32 @@ void match(char c)
 	nextChar();
 }
 /* recebe o nome de um identificador */
-char getName()
+void getName(char* name)
 {
-	char name;
+	int i;
 	if (!isalpha(look))
 		expected("Name");
-	name = toupper(look);
-	nextChar();
-	return name;
+	for (i = 0; isalnum(look); i++) {
+		if (i >= MAXNAME)
+			fatal("Identifier too long!");
+		name[i] = toupper(look);
+		nextChar();
+	}
+	name[i] = '\0';
 }
 /* recebe um número inteiro */
-char getNum()
+void getNum(char* num)
 {
-	char num;
+	int i;
 	if (!isdigit(look))
 		expected("Integer");
-	num = look;
-	nextChar();
-	return num;
+	for (i = 0; isdigit(look); i++) {
+		if (i >= MAXNUM)
+			fatal("Integer too long!");
+		num[i] = look;
+		nextChar();
+	}
+	num[i] = '\0';
 }
 /* emite uma instrução seguida por uma nova linha */
 void emit(const char* fmt, ...)

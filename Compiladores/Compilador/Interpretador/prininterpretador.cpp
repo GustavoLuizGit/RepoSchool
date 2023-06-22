@@ -6,10 +6,9 @@
 #define MAXNAME 30
 #define MAXNUM 5
 #define MAXVAR 26
+
 char look; /* O caracter lido "antecipadamente" (lookahead) */
 int var[MAXVAR];
-int posicaoVetor = 0;
-char* arquivo;
 
 /* protótipos */
 void init();
@@ -35,28 +34,34 @@ void InitVar();
 void newLine();
 void input();
 void output();
-void lendoArquivo();
+
 /* PROGRAMA PRINCIPAL */
 int main()
 {
+
 	InitVar();
 	init();
+	
 	do {
 		switch (look)
 		{
-		case '?':
-			input();
-			break;
-		case '!':
-			output();
-			break;
-		case '\n':
-			newLine();
-			break;
-		default:
-			assignment();
+			case '?' :
+				input();
+				break;
+			case '!' :
+				output();
+				break;
+			case '\n':
+				newLine();
+				break;
+			default :
+				assignment();
 		}
-	} while (look != '.');
+		newLine();
+	} while (look != ',');
+	
+	printf("%d", var[0]);
+	
 	return 0;
 }
 
@@ -82,10 +87,9 @@ void assignment()
 	name = getName();
 	match('=');
 	var[name - 'A'] = expression();
-	skipWhite();
 }
 
-int expression()
+int expression() 
 {
 	int val;
 	if (look == '+' || look == '-')
@@ -97,21 +101,21 @@ int expression()
 	{
 		switch (look)
 		{
-		case '+':
-			match('+');
-			val += term();
-			break;
-		case '-':
-			match('-');
-			val -= term();
-			break;
+			case '+':
+				match('+');
+				val += term();
+				break;
+			case '-':
+				match('-');
+				val -= term();
+				break;
 		}
 	}
 
 	return val;
 }
 
-int term()
+int term() 
 {
 	int val = factor();
 
@@ -119,17 +123,17 @@ int term()
 	{
 		switch (look)
 		{
-		case '*':
-			match('*');
-			val *= factor();
-			break;
-		case '/':
-			match('/');
-			val /= factor();
-			break;
+			case '*':
+				match('*');
+				val *= factor();
+				break;
+			case '/':
+				match('/');
+				val /= factor();
+				break;
 		}
 	}
-
+	
 	return val;
 }
 
@@ -182,8 +186,6 @@ int factor()
 		}
 		else
 			val = getNum();
-	
-	skipWhite();
 
 	return val;
 }
@@ -210,7 +212,6 @@ void ident()
 /* inicialização do compilador */
 void init()
 {
-	lendoArquivo();
 	nextChar();
 	skipWhite();
 }
@@ -218,45 +219,8 @@ void init()
 /* lê próximo caracter da entrada */
 void nextChar()
 {
-	look = arquivo[posicaoVetor];
-	posicaoVetor++;
+	look = getchar();
 }
-
-void lendoArquivo() {
-	FILE* file;
-	errno_t err;
-
-	// Abrir o arquivo em modo de leitura
-	err = fopen_s(&file, "C:\\Users\\gusta\\Documents\\GitHubRepositorios\\RepoSchool\\Compiladores\\Compilador\\VersãoLarge\\arquivoLarge.txt", "r");
-	if (err != 0)
-		fatal("Erro ao abrir o arquivo!");
-
-	// Contar o número de caracteres
-	int count = 0;
-	int ch;
-
-	while ((ch = fgetc(file)) != EOF) {
-		count++;
-	}
-
-	// Alocar memória para arquivo com o tamanho adequado
-	arquivo = (char*)malloc((count + 1) * sizeof(char));  // +1 para o caractere nulo
-
-	// Verificar se a alocação de memória foi bem-sucedida
-	if (arquivo == NULL) 
-		fatal("Erro ao alocar memória!");
-
-	// Voltar ao início do arquivo
-	fseek(file, 0, SEEK_SET);
-
-	// Ler o conteúdo do arquivo para a variável arquivo
-	fread(arquivo, sizeof(char), count, file);
-	arquivo[count] = '.'; // Adicionar o caractere nulo ao final do conteúdo
-
-	// Fechar o arquivo
-	fclose(file);
-}
-
 
 /* exibe uma mensagem de erro formatada */
 void error(const char* fmt, ...)
@@ -322,7 +286,6 @@ char getName()
 		expected("Name");
 	name = toupper(look);
 	nextChar();
-	skipWhite();
 	return name;
 }
 
@@ -370,7 +333,7 @@ void InitVar()
 		var[i] = 0;
 }
 
-void newLine()
+void newLine() 
 {
 	while (look == '\n')
 		nextChar();
